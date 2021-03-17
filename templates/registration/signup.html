@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load filters %}
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="card">
+        <div class="card-header">Регистрация</div>
+        <div class="card-body">
+            <form method="post" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+
+                {% for field in form %}
+                    <div class="form-group row">
+                        <label for="{{ field.id_for_label }}" class="col-md-4 col-form-label text-md-right">{{ field.label }}</label>
+                        <div class="col-md-6">
+                            {{ field|addclass:"form-control" }}
+                            {% if field.help_text %}
+                            <small id="{{ field.id_for_label }}-help" class="form-text text-muted">{{ field.help_text|safe }}</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" class="btn btn-primary">
+                        Зарегестрироваться
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
