@@ -129,4 +129,7 @@ dmypy.json
 .pyre/
 
 тз
+cache/
+media/
+static/
 ngrok.exe

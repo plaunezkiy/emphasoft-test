@@ -27,6 +27,12 @@ Github и Google, SECRET_KEY для Django
     * **SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET**
 
 
-* Применить миграции, запустить сервер и радоваться жизни :-)
+* Применить миграции
     * ```./manage.py migrate```
+
+
+* *По желанию* загрузить тестовую информацию в базу
+    * ```./manage.py loaddata sample.json```
+
+* Запустить сервер и радоваться жизни :-)
     * ```./manage.py runserver```
